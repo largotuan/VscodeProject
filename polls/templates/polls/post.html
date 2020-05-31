@@ -1,0 +1,9 @@
+{% extends "polls/base.html" %}
+
+{% block title %}{{ post.title}}{% endblock %}
+
+{% block content123 %}
+    <h3><a href='{% url 'polls:post' post.id %}'>{{post.title}}</a></h3>
+    <h6> on {{post.date}}</h6>
+    {{post.body|safe|linebreaks}}
+{% endblock %}
